@@ -1,6 +1,6 @@
 # jasons-npm-practices
 
-This page has some of my standard practices while I am working on node projects
+This page has some of my standard best practices while I am working on node projects.
 
 # Keep dependencies up to date.
 
@@ -22,7 +22,7 @@ For me, I use the following practice when updating:
 - Identify one module that needs to be updated by running `npm-check`
 - Update that one module using the command from npm-check
 - Re-run my unit/integration tests and see that all is still green.  Resolve any issues.
-- Commit the changes, which will, at a minimum include `package.json`
+- Commit the changes, which will, at a minimum include `package.json`.  Favor a single commit per module upgrade.  Favor a commit message that state the new version (`upgrade yargs to 11.0.0`).
 - Upgrade additional modules
 - Release new version or merge branch*
 

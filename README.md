@@ -1,4 +1,4 @@
-# jasons-npm-practices
+# jasons node/npm practices
 
 This page has some of my standard best practices while I am working on node projects.
 
@@ -14,6 +14,8 @@ Run it:
 ```
 $ npm-check
 ```
+
+# versioning
 
 For me, I use the following practice when updating:
 - Start from a clean branch (such as `next` or a branch off your working director)

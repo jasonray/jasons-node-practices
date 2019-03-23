@@ -15,10 +15,10 @@ Run it:
 $ npm-check
 ```
 
-# versioning
+## Execute update
 
 For me, I use the following practice when updating:
-- Start from a clean branch (such as `next` or a branch off your working director)
+- Start from a clean branch (such as `next` or a branch off your working directory)
 - Make sure that your dependencies are installed (`npm rebuild`)
 - Run my unit/integration tests and see that all is green
 - Identify one module that needs to be updated by running `npm-check`
@@ -29,3 +29,17 @@ For me, I use the following practice when updating:
 - Release new version or merge branch*
 
 *: On small projects, I favor releasing upgrades on their own as a patch release.  On large project, or if I discover the need to upgrade while in the middle of another release, I often lazily upgrade with the other planned release.
+
+# Versioning
+
+- Merge master into working directory (`next`)
+- Branch from working directory into feature branches, and merge back to working directory as complete
+- When ready to release..
+- Branch to release branch (name after targeted npm version)
+- Run your unit tests make sure it is good
+- bump version in npm
+- npm publish
+- tag release
+- push tag to origin `git push origin <tag>`
+- github release.  Find tag, click create release.
+- merge to next, master

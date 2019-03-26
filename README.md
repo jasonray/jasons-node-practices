@@ -100,6 +100,9 @@ script:
 - npm $TEST_CMD
 ```
 
+### Travis-CI badge
+
+Get the badge from your [Travis-CI](https://travis-ci.org/jasonray) build page.  This will list the current build status on your repo readme
 
 ## NPM version
 

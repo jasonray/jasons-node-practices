@@ -69,6 +69,7 @@ Here is a more complex one from one of my projects.  A few things to note in her
 - node_js specifies I want to run with version 8 and the current (node)
 - addons.apt is used to install OS level packages
 - env in this case is used to specify different env variables (I use it here so that I can run once with unit tests and one with integration tests)
+- full list of [options can be found in documentation here](https://docs.travis-ci.com/user/customizing-the-build)
 
 ```
 language: node_js

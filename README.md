@@ -110,3 +110,8 @@ Get the badge from your [Travis-CI](https://travis-ci.org/jasonray) build page. 
 
 ## Greenkeeper (help keep current version)
 
+## More badges
+
+- https://shields.io/category/coverage
+- https://gist.github.com/skratchdot/e44d7df7683a525f4b68
+

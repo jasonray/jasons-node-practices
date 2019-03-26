@@ -42,3 +42,67 @@ For me, I use the following practice when updating:
 - push tag to origin `git push origin v1.6.0`
 - Mark github release.  Access project in github, click `releases`, click `tags`, to right of tag, click `create release`
 - merge to next, master
+
+# Plug-ins / badges
+
+## Travis-CI (CI)
+
+Travis-CI is a powerful / free build environment.  It is great for running a build when you push to select branches, pull requests are formed, or on a schedule (like daily/monthly).  It can run matrixed environments (like different versions of node or OS).  Not bad for free.
+
+[Overview](https://docs.travis-ci.com/user/tutorial/)
+
+First you need some one time account setup stuff to be done.  I will not cover that here.
+
+Add a `.travis.yml` to the root of your git repo.  This provides the instructions for your build job.
+
+Here is a pretty basic version:
+```
+language: node_js
+sudo: false
+node_js:
+  - "node"
+  - "8"
+```
+
+Here is a more complex one from one of my projects.  A few things to note in here:
+- language is used to specify java, ruby, etc.  This is a node project
+- node_js specifies I want to run with version 8 and the current (node)
+- addons.apt is used to install OS level packages
+- env in this case is used to specify different env variables (I use it here so that I can run once with unit tests and one with integration tests)
+
+```
+language: node_js
+sudo: false
+node_js:
+  - "node"
+  - "8"
+
+addons:
+  apt:
+    packages:
+    - beanstalkd
+
+env:
+- TEST_CMD=test
+- TEST_CMD="run integration-test"
+
+before_install:
+- echo 'starting queue'
+- bin/start-queue.sh &
+- jobs -l
+
+after_script:
+- npm install -g npm-check
+- npm-check
+
+script:
+- npm $TEST_CMD
+```
+
+
+## NPM version
+
+## Coveralls (code coverage)
+
+## Greenkeeper (help keep current version)
+

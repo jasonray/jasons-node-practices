@@ -37,9 +37,9 @@ For me, I use the following practice when updating:
 - When ready to release..
 - Branch to release branch.  Name after targeted npm version, in format `release-v1.2.3`.  Example: `git checkout -b release-v1.2.3`
 - Run your unit tests make sure it is good Example: `npm test`
-- bump version in npm, and create git tag.  Example: `npm version minor -m "bump version to 1.6"`
+- Bump version in npm, and create git tag.  Example: `npm version minor -m "bump version to %s"`
 - Publish module.  `npm publish`
-- push tag to origin `git push origin v1.6.0`
+- push tag to origin `git push origin v1.6.0` (where v1.6.0 is the name of the tag)
 - Mark github release.  Access project in github, click `releases`, click `tags`, to right of tag, click `create release`
 - merge to next, master
 
